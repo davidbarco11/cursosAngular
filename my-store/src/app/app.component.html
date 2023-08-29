@@ -1,0 +1,36 @@
+<h1>ng for arra de objetos</h1>
+<div class="productos-grill">
+  <div *ngFor="let productos of products" style="width:200px;height: 200px;background-color: red;margin-top: 20px;border-radius: 10px;">
+    <h2>{{productos.name}}</h2>
+    <p>{{productos.price}}</p>
+    <img style="width:200px;height: 100px;" [src]="productos.image" alt="">
+  </div>
+
+</div>
+
+
+
+<hr>
+<h1>*ngFor</h1>
+<input type="text" [(ngModel)]="newName"/>
+<button (click)="agregarNombre()">Agregar nombre</button>
+<p *ngIf="nombres.length == 0">No hay nombres para mostrar</p>
+<ul>
+  <li *ngFor="let item of nombres, index as i">{{i}} {{item}} <button (click)="borrar(i)">Eliminar</button></li>
+
+</ul>
+
+
+
+
+<hr>
+<h1>*ngIf</h1>
+<p *ngIf="age && age == 34; else miBloque">se muestra la edad por ng if</p>
+
+<ng-template #miBloque>
+  <p>soy el bloque del else</p>
+</ng-template>
+
+<hr>
+<h1>mi edad es {{age}}</h1>
+<button (click)="cambiarEdad()">Aumentar edad</button>

@@ -1,0 +1,16 @@
+
+
+ <!-- <h3>{{counter}}</h3> -->
+
+<div *ngIf="img; else elseBlock">
+  <!-- Código que se mostrará si la condición 1 es verdadera -->
+  <img width="60%" (load)="imgCargada()" (error)="imgError()" [src]="img" alt="">
+</div>
+<ng-template #elseBlock>
+  <!-- Código que se mostrará si la condición 1 es falsa -->
+  <div>
+    <p>No hay imagen para mostrar</p>
+  </div>
+</ng-template>
+
+
